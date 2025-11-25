@@ -130,25 +130,3 @@ CREATE INDEX IF NOT EXISTS idx_events_date ON events(event_date);
 CREATE INDEX IF NOT EXISTS idx_events_featured ON events(featured);
 CREATE INDEX IF NOT EXISTS idx_gallery_event_id ON gallery(event_id);
 CREATE INDEX IF NOT EXISTS idx_ticket_purchases_event_id ON ticket_purchases(event_id);
-
--- Insert sample events
-INSERT INTO events (title, description, genre, city, venue, event_date, price, image_url, capacity, featured) VALUES
-  ('Noche de Ritmos Urbanos', 'La mejor fiesta de música afro con los DJs más reconocidos de Colombia', 'afro', 'Bogotá', 'Club Armando Records', '2025-11-15 22:00:00', 50000, 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', 500, true),
-  ('Dancehall Vibes', 'Una noche épica de dancehall con artistas internacionales', 'dancehall', 'Medellín', 'Teatro Metropolitan', '2025-11-20 21:00:00', 60000, 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800', 800, true),
-  ('Reggaetón Explosión', 'El mejor reggaetón de la ciudad en una sola noche', 'reggaeton', 'Cali', 'Discoteca Tin Tin Deo', '2025-11-25 23:00:00', 45000, 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800', 600, true),
-  ('Afro Sessions', 'Celebra la cultura afro con música en vivo y DJ sets', 'afro', 'Bogotá', 'Salón Comunal La Macarena', '2025-12-01 20:00:00', 40000, 'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=800', 300, false),
-  ('Caribbean Night', 'Dancehall y reggae toda la noche', 'dancehall', 'Cali', 'Club Matraca', '2025-12-05 22:00:00', 35000, 'https://images.pexels.com/photos/1677710/pexels-photo-1677710.jpeg?auto=compress&cs=tinysrgb&w=800', 400, false),
-  ('Perreo Intenso', 'La mejor música urbana y reggaetón del momento', 'reggaeton', 'Medellín', 'Discoteca El Tibiri', '2025-12-10 23:00:00', 55000, 'https://images.pexels.com/photos/2263410/pexels-photo-2263410.jpeg?auto=compress&cs=tinysrgb&w=800', 700, false);
-
--- Insert sample gallery photos
-INSERT INTO gallery (event_id, image_url, caption) 
-SELECT id, 'https://images.pexels.com/photos/1267699/pexels-photo-1267699.jpeg?auto=compress&cs=tinysrgb&w=800', 'Ambiente increíble en la pista'
-FROM events LIMIT 1;
-
-INSERT INTO gallery (event_id, image_url, caption) 
-SELECT id, 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800', 'DJ en acción'
-FROM events OFFSET 1 LIMIT 1;
-
-INSERT INTO gallery (event_id, image_url, caption) 
-SELECT id, 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800', 'La energía de la multitud'
-FROM events OFFSET 2 LIMIT 1;

@@ -13,9 +13,9 @@ export default function Navigation({ currentPage }: NavigationProps) {
     { id: '/artistas', label: 'Artistas' },
     { id: '/comunidad', label: 'Comunidad' },
     { id: '/contacto', label: 'Contacto' },
-    { id: '/nosotros', label: 'Nosotros' },
     { id: '/galeria', label: 'Galería' },
     { id: '/compras', label: 'Compras' },
+    { id: '/nosotros', label: 'Nosotros' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             </NavLink>
 
             <div className="hidden md:flex items-center gap-6">
-              {navItems.slice(0, 5).map((item) => (
+              {navItems.slice(0, 6).map((item) => (
                 <NavLink to={item.id} key={item.id}>
                   <button
                     className={`text-sm font-medium transition-colors ${

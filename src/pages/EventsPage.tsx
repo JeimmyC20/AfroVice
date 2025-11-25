@@ -29,7 +29,7 @@ export default function EventsPage() {
       setEvents(data);
     }
     setLoading(false);
-    
+   
   };
 
   const filterEvents = () => {
@@ -196,5 +196,5 @@ export default function EventsPage() {
       </div>
     </div>
   );
-  
+ 
 }
