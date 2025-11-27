@@ -1,24 +1,27 @@
-import { Music4, Instagram, Twitter } from 'lucide-react';
+import { Music4, Instagram } from 'lucide-react';
 
 export default function ArtistsPage() {
   const artists = [
     {
-      name: 'DJ Africano',
+      name: 'Kapo',
       genre: 'Afro',
-      image: 'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=800',
-      bio: 'El mejor DJ de música afro en Colombia',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvpqMlohm9XNvEE2DkqxWMNHzGxD6zfO_BbmzHEv1EqWrfktvjaQDWpxNisM43uRYQzvAt7kGW6CautYFCdBd6OlWjmmuAr_lrTRPKww&s=10',
+      bio: 'El mejor compositor colombiano de los géneros Afrobeat y reguetón.',
+      instagram: 'https://www.instagram.com/yosoytukapo/?hl=es-la',
     },
     {
-      name: 'Dancehall King',
-      genre: 'Dancehall',
-      image: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
+      name: 'Asake',
+      genre: 'Afro',
+      image: 'https://www.billboard.com/wp-content/uploads/2023/06/Asake-cr-Ola-Alabi-billboard-1548.jpg',
       bio: 'Reconocido por sus mezclas de dancehall',
+      instagram: 'https://www.instagram.com/asakemusic',
     },
     {
-      name: 'Reggaeton Master',
+      name: 'J Balvin',
       genre: 'Reggaetón',
-      image: 'https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&w=800',
-      bio: 'El rey del reggaetón urbano',
+      image: 'https://yt3.googleusercontent.com/UqJr0qGvZ5xpw2BMCjPEl8_oOp7Y3ttA6ZG2fJspi8jLx6e2GRLiqLjM5dtPB6Gxkc1JFTRXS3Y=s900-c-k-c0x00ffffff-no-rj',
+      bio: 'Los mejores temas de reggaetón',
+      instagram: 'https://www.instagram.com/jbalvin/?hl=es-la',
     },
   ];
 
@@ -58,14 +61,15 @@ export default function ArtistsPage() {
                 </div>
               </div>
               <div className="p-6 flex gap-3">
-                <button className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-lg transition-all flex items-center justify-center gap-2">
+                <a
+                  href={artist.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-lg transition-all flex items-center justify-center gap-2"
+                >
                   <Instagram className="w-4 h-4" />
                   <span className="text-sm">Instagram</span>
-                </button>
-                <button className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-lg transition-all flex items-center justify-center gap-2">
-                  <Twitter className="w-4 h-4" />
-                  <span className="text-sm">Twitter</span>
-                </button>
+                </a>
               </div>
             </div>
           ))}
